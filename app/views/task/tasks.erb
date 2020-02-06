@@ -1,0 +1,14 @@
+<h1>Hi, <%= current_user.username %></h1>
+<br>
+<h2>Here are your tasks!</h2>
+<p>Click on a task to edit or delete!</p>
+
+<% current_user.tasks.each do |task| %>
+  <ul>
+    <li><a href="/tasks/<%=task.id%>"><%= task.name %> - <%= task.content %></a></li>
+  </ul>
+<% end %>
+
+<br>
+<a href="/tasks/new">Add New Task</a><br>
+<a href="/logout">Log Out</a>
