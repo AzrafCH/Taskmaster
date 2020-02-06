@@ -1,0 +1,12 @@
+<h2>View Task:</h2>
+<h3><%= @task.name %> -  <%= @task.content %></h3>
+<a href="/tasks/<%= @task.id %>/edit">Edit Task</a>
+<br>
+<br>
+  <form action="/tasks/<%=@task.id%>/delete" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Task">
+  </form>
+<br>
+<a class="button" href="/tasks">Back to Tasklist</a><br>
+<a class="button" href="/logout">Log Out</a>
