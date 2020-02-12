@@ -5,7 +5,7 @@
 
 <% current_user.tasks.each do |task| %>
   <ul>
-    <li><a href="/tasks/<%=task.id%>"><%= task.name %> - <%= task.content %></a></li>
+    <li><a href="/tasks/<%=task.id%>"><%= task.name %></a></li>
   </ul>
 <% end %>
 
