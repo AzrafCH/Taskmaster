@@ -19,9 +19,9 @@ class UserController < ApplicationController
     else
      @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
       @user.save
-      session[:user_id] = @user_id
+      session[:user_id] = @user.id
   # env['x-rack.flash'][:notice] = "You have succesfully registered!"
-      redirect to '/user/login'
+      redirect to '/tasks'
    end
  end
 
@@ -37,7 +37,7 @@ class UserController < ApplicationController
     user = User.find_by(:username => params[:username])
    if user && user.authenticate(params[:password]) && user.password == nil
      session[:user_id] = user.id
-      redirect to '/user/login'
+      redirect to '/tasks'
     else
       redirect to '/'
     end
