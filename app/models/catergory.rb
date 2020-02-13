@@ -1,3 +1,3 @@
-class Catergory < Sinatra::Base
-  have_many :tasks
+class Category < Sinatra::Base
+  has_many :tasks
 end
