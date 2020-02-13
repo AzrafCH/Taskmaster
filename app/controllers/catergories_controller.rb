@@ -8,3 +8,5 @@ class CatergoriesController < ApplicationController
   end
 
 end
+
+#I have to add categories, in which tasks get placed into a certain category. 
