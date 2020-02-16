@@ -21,7 +21,7 @@ class UserController < ApplicationController
       @user.save
       session[:user_id] = @user.id
   # env['x-rack.flash'][:notice] = "You have succesfully registered!"
-      redirect to '/tasks'
+      redirect to '/catergories'
    end
  end
 
@@ -29,7 +29,7 @@ class UserController < ApplicationController
     if !logged_in?
       erb :'/user/login'
     else
-      redirect to '/tasks'
+      redirect to '/catergories'
     end
   end
 
@@ -37,7 +37,7 @@ class UserController < ApplicationController
     user = User.find_by(:username => params[:username])
    if user && user.authenticate(params[:password]) && user.password == nil
      session[:user_id] = user.id
-      redirect to '/tasks'
+      redirect to '/catergories'
     else
       redirect to '/'
     end
