@@ -1,3 +1,4 @@
+require 'pry'
 class CatergoryController < ApplicationController
 
   get '/categories/categories' do
@@ -16,13 +17,13 @@ class CatergoryController < ApplicationController
   post '/categories/categories' do
     if logged_in?
       if params["task"]["name"] == "" || params["task"]["content"] == "" || params["name"]
-        session[:category] = params["name"]
+        session[:category] = params["category"]["name"]
         session[:name] = params["task"]["name"]
         session[:content] = params["task"]["content"]
         erb :'/categories/new'
       else
         @user = current_user
-        @category = Category.create(params[:name])
+        @category = Category.create(name: params["category"]["name"])
         @category.tasks << Task.create(name: params["task"]["name"], content: params["task"]["content"])
         @category.save
         redirect to '/categories/categories'

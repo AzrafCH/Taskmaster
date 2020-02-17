@@ -2,7 +2,7 @@
 <br>
 <form method="POST" action="/categories/categories">
   <label for= "category_name">Category Name:</label><br>
-  <input type="text" name = "params[name]" value = "<%= session[:category]%>" /><br><br>
+  <input type="text" name = "category[name]" value = "<%= session[:category]%>" /><br><br>
   <label for="task_name">Name:</label><br>
   <input type="text" name="task[name]" value = "<%= session[:name] %>" /><br><br>
   <label for="task_content">Content:</label><br>
