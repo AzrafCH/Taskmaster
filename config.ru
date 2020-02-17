@@ -8,4 +8,4 @@ use Rack::MethodOverride
 run ApplicationController
 use UserController
 use TaskController
-use CategoryController
+use CatergoryController

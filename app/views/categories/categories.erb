@@ -3,7 +3,7 @@
 <h2>Here are your Categories!</h2>
 <p>Click on a Category to edit or delete!</p>
 
-<% current_user.categories.each do |category| %>
+<% current_user.category.each do |category| %>
   <ul>
     <li><a href="/categories/<%= category.id%>"><%= category.name %></a></li>
   </ul>
