@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20200217021243) do
 
-  create_table "category", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
   end
 
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20200217021243) do
     t.string  "name"
     t.string  "content"
     t.integer "user_id"
+    t.integer "category_id"
   end
 
   create_table "users", force: :cascade do |t|

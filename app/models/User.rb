@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :tasks, through: :catergories
-  has_many :catergories
+  has_many :tasks, through: :categories
+  has_many :categories
   has_secure_password
 end
