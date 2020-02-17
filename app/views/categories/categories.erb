@@ -3,6 +3,11 @@
 <h2>Here are your Categories!</h2>
 <p>Click on a Category to edit or delete!</p>
 
+<% @category.each do |category| %>
+  <ul>
+    <li><a href="/categories/<%=category.id%>"><%= category.name %></a></li>
+  </ul>
+<% end %>
 
 <br>
 <a href="/categories/new">Add New Category</a><br>
