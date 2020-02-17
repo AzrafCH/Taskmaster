@@ -1,14 +1,13 @@
-<h1><%= @category %></h1>
+<h1><%= @category.name %></h1>
 <h2>View Task:</h2>
-<h3><%= @category.tasks.name %></h3>
-<h4><%= @category.tasks.content %></h4>
+<h3><%= @category.tasks %></h3>
 <br>
 <br>
 
-<a href="/tasks/<%= @task.id %>/edit">Edit Tasks</a>
+<a href="/categories/<%= @category.id %>/edit">Edit tasks</a>
 <br>
 <br>
-  <form action="/tasks/<%=@task.id%>/delete" method="POST">
+  <form action="/categories/<%=@category.id%>/delete" method="POST">
     <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Task">
   </form>

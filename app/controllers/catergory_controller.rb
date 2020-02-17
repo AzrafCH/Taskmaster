@@ -16,7 +16,7 @@ class CatergoryController < ApplicationController
 
   post '/categories/categories' do
     if logged_in?
-      if params["task"]["name"] == "" || params["task"]["content"] == "" || params["name"]
+      if params["task"]["name"] == "" || params["task"]["content"] == "" || params["category"]["name"]
         session[:category] = params["category"]["name"]
         session[:name] = params["task"]["name"]
         session[:content] = params["task"]["content"]
