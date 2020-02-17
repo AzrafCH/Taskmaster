@@ -1,0 +1,14 @@
+<h2>Create New Category:</h2>
+<br>
+<form method="POST" action="/categories">
+  <label for= "category_name">Category Name:</label><br>
+  <input type="text" name = "categories[name]" value = "<%= session[:category]%>" /><br><br>
+  <label for="task_name">Name:</label><br>
+  <input type="text" name="task[name]" value = "<%= session[:name] %>" /><br><br>
+  <label for="task_content">Content:</label><br>
+  <input type="text" name="task[content]" value = "<%= session[:content] %>"/><br><br>
+  <input type="submit" value="Add to Tasklist">
+</form>
+<br>
+<a class="button" href="/categories">Back to TaskList</a><br>
+<a class="button" href="/logout">Log Out</a>
