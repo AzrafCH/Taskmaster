@@ -1,6 +1,11 @@
 <h1><%= @category.name %></h1>
 <h2>View Task:</h2>
-<h3><%= @category.tasks %></h3>
+<ul>
+  <%@category.tasks.each do |task|%>
+  <li><%=task.name%></li><br>
+  <li><%=task.content%></li><br>
+  <%end%>
+</ul>
 <br>
 <br>
 
