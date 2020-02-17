@@ -26,10 +26,7 @@ class CatergoriesController < ApplicationController
         @category.tasks << Task.create(name: params["task"]["name"], content: params["task"]["content"])
         @category.save
         redirect to '/categories/categories'
-      else
-        redirect to '/categories/new'
       end
-    end
   else
     redirect to '/user/login'
   end
@@ -46,14 +43,13 @@ end
       erb :'/categories/show'
     end
 
-    patch '/categories/:id' do
-      @category = Category.find(params[:id])
-      @category.update(params[:name])
+  patch '/categories/:id' do
+    @category = Category.find(params[:id])
+    @category.update(params[:name])
       if !params["task"]["name"].empty?
         @category.tasks << Task.create(name: params["task"]["name"], content: params["task"]["content"])
       end
       redirect "/categories/#{@category.id}"
-    end
+  end
 end
-
 #I have to add categories, in which tasks get placed into a certain category.
