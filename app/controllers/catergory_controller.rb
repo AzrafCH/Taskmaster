@@ -1,6 +1,6 @@
 class CatergoriesController < ApplicationController
 
-  get '/catergories/catergories' do
+  get '/categories/categories' do
     @user = current_user
     redirect_if_not_logged_in
     @category = Category.all
@@ -13,7 +13,7 @@ class CatergoriesController < ApplicationController
     erb :'/categories/new'
   end
 
-  post '/catergories/catergories' do
+  post '/categories/categories' do
     if logged_in?
       if params["task"]["name"] == "" || params["task"]["content"] == "" || params["name"]
         session[:category] = params["name"]
