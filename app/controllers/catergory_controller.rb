@@ -1,4 +1,4 @@
-class CatergoriesController < ApplicationController
+class CatergoryController < ApplicationController
 
   get '/categories/categories' do
     @user = current_user

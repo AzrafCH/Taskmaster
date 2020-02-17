@@ -26,7 +26,7 @@ class UserController < ApplicationController
     if !logged_in?
       erb :'/user/login'
     else
-      redirect to '/categories/categories'
+      redirect to '/user/login'
     end
   end
 
