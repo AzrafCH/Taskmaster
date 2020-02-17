@@ -13,13 +13,27 @@ class CatergoriesController < ApplicationController
     erb :'/categories/new'
   end
 
-    post '/categories' do
-      @category = Category.create(params[:name])
-      if !params["task"]["name"].empty?
+  post '/categories' do
+    if logged_in?
+      if params["task"]["name"] == "" || params["task"]["content"] == "" || params["name"]
+        session[:category] = params["name"]
+        session[:name] = params["task"]["name"]
+        session[:content] = params["task"]["content"]
+        erb :'/categories/new'
+      else
+        @user = current_user
+        @category = Category.create(params[:name])
         @category.tasks << Task.create(name: params["task"]["name"], content: params["task"]["content"])
+        @category.save
+        redirect to '/categories/categories'
+      else
+        redirect to '/categories/new'
       end
-      redirect "/categories/#{@category.id}"
     end
+  else
+    redirect to '/user/login'
+  end
+end
 
     get '/categories/:id/edit' do
       @category = Category.find(params[:id])

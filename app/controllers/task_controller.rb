@@ -27,7 +27,6 @@ class TaskController < ApplicationController
          @user.tasks << @task
           redirect to '/tasks'
         else
-
           redirect to '/tasks/new'
        end
      end
